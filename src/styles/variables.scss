@@ -1,0 +1,151 @@
+$color-grey1: #1d2028;
+$color-grey2: #2b2f3b;
+$color-grey3: #4d525c;
+$color-grey4: #7f828a;
+$color-grey5: #a7a8ab;
+$color-grey6: #c4c4c6;
+$color-grey7: #dedfe1;
+$color-grey8: #efeff1;
+$color-grey9: #f3f3f3;
+
+$color-purple1: #ac4c87;
+$color-purple2: #b0538c;
+$color-purple3: #b55d93;
+$color-purple4: #c66ea4;
+$color-purple5: #ce7daf;
+$color-purple6: #df95c2;
+$color-purple7: #f1afd7;
+$color-purple8: #fbc9e7;
+
+$color-yellow1: #d69d00;
+$color-yellow2: #dabf4c;
+$color-yellow3: #fff8e5;
+$color-yellow4: #ffe9d4;
+$color-yellow5: #b77940;
+
+$color-green1: #488b6e;
+$color-green2: #3da025;
+$color-green3: #eef9ec;
+$color-green4: #c3e2dc;
+
+$color-red1: #e72c2c;
+$color-red2: #cc3f3b;
+$color-red3: #faeceb;
+$color-red4: #fee5e5;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+// TODO: review colors, remove wrong
+$color-theme-black: #1a1532;
+$color-theme-grey: #e9ebef;
+
+$color-purple: #af2c89;
+$color-brown: #54352d;
+$color-pale-blue: #cee9e6;
+$color-purple-plum: #a340b7;
+$color-blue: #3375de;
+$color-light-blue: #edf8f6;
+$color-royal-blue: #5b61d8;
+$color-grey: #646464;
+$color-grey-light: #979797;
+$color-warm-pink: #f9f9f9;
+$color-grey-field: #f6f8fa;
+$color-light-pink: #f9eef6;
+$box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+$background-purple: rgba(175, 44, 137, 0.08);
+$opacity: 0.6;
+$z-index-table-header: 100;
+$z-index-dropdown: 1000;
+$z-index-modal: 1000;
+$border-radius: 0.5rem;
+$input-border-radius: 25px;
+$border: 1px solid $color-theme-grey;
+
+////////////////////////////////////////
+///////// UI Kit Color Scheme///////////
+////////////////////////////////////////
+
+// Main colors
+$black: #1d2028;
+$primary-main: #ac4c87;
+$secondary-main: #e8f7f5;
+$white: #ffffff;
+
+//Feedback
+$error: #e72c2c;
+$success: #04c37f;
+
+//Primary color shades
+$primary-darkest: #9c467b;
+$primary-darker: #b0538c;
+$primary-dark: #c57ba8;
+$primary-midtone: #d193b9;
+$primary-light: #dfaccb;
+$primary-lighter: #edc2dc;
+$primary-lightest: #f8e0ee;
+
+//Secondary color shades
+$darkest-green: #7ea69d;
+$darker-green: #99c0b8;
+$dark-green: #abc7c1;
+$green-midtone: #b8d7d0;
+$light-green: #c8e9e2;
+$lighter-green: #dcf2ee;
+$lightest-green: #e8f7f5;
+
+//Grey shades
+$darkest-grey: #2b2f3b;
+$darker-grey: #4d525c;
+$dark-grey: #7f828a;
+$grey-midtone: #a7a8ab;
+$light-grey: #c4c4c6;
+$lighter-grey: #dedfe1;
+$lightest-grey: #efeff1;
+$super-lightest-grey: #f9f9f9;
+
+////////////////////////////////////////
+
+// General
+
+$font-size: 18px;
+$font-size-medium: 16px;
+$font-size-sm: 14px;
+$line-height: 24px;
+$line-height-sm: 20px;
+$text-color: $color-theme-black;
+$text-color-muted: $color-grey;
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Inputs
+
+// text input - base for every other input
+$input-padding-x: 16px;
+$input-padding-y: 12px;
+$input-font-size: inherit;
+$input-font-family: inherit;
+$input-font-weight: 400;
+$input-line-height: $line-height;
+$input-border: 1px solid #dcdee2;
+$input-border-radius: 6px;
+$input-focus-border: 1px solid $color-purple;
+$input-invalid-border: solid 1px $color-red1;
+$input-rounded-border-radius: ($input-line-height + $input-padding-x * 2) * 0.5;
+
+// textarea
+$textarea-min-height: 150px;
+$textarea-max-height: 300px;
+
+// UI
+$page-header: 5.5rem;
+$page-margin: 1.5rem;
+$text-subheader: 4.5rem;
+$element-subheader: 6rem;
+$default-scroll-width: 4px;

@@ -1,0 +1,48 @@
+.spinner {
+  $size: 50px;
+
+  $tik-top: 2px;
+  $tik-width: 4px;
+  $tik-height: 12px;
+
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $size;
+  height: $size;
+
+  div {
+    transform-origin: $size*0.5 $size*0.5;
+    animation: spinner 1.2s linear infinite;
+
+    &:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: $tik-top;
+      left: $size*0.5 - $tik-width*0.5;
+      width: $tik-width;
+      height: $tik-height;
+      border-radius: 20%;
+      background: $color-purple;
+    }
+
+    @for $i from 0 through 11 {
+      &:nth-child(#{$i + 1}) {
+        transform: rotate($i * 30deg);
+        animation-delay: #{-1.1 + 0.1 * $i}s;
+      }
+    }
+  }
+}
+
+@keyframes spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
