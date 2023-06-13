@@ -1,3 +1,12 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: 'SoinSansNeue Normal', sans-serif;
+}
+
 html,
 body,
 #root {

@@ -37,6 +37,8 @@ $color-white: #ffffff;
 $color-black: #000000;
 
 // TODO: review colors, remove wrong
+
+$color-dark-peach: #e27976;
 $color-theme-black: #1a1532;
 $color-theme-grey: #e9ebef;
 
@@ -117,11 +119,11 @@ $text-color: $color-theme-black;
 $text-color-muted: $color-grey;
 
 $breakpoints: (
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px,
 );
 
 // Inputs

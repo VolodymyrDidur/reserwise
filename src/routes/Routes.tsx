@@ -1,18 +1,12 @@
-import { Route, Switch } from 'react-router-dom';
-
-import { MainPage } from '../pages';
-import RedirectRoute from './RedirectRoute';
-import { useAuth } from '../hooks';
+import {Route, Switch} from 'react-router-dom';
+import {MainPage} from '../pages';
 
 const Routes = () => {
-  const { isAuthenticated } = useAuth();
-
-  return (
-    <Switch>
-      <Route path="/home" render={() => <MainPage>Hello</MainPage>} />
-      {isAuthenticated && <Route path="*" component={RedirectRoute} />}
-    </Switch>
-  );
+    return (
+        <Switch>
+            <Route path="/" render={() => <MainPage>Hello</MainPage>}/>
+        </Switch>
+    );
 };
 
 export default Routes;
