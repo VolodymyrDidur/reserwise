@@ -1,0 +1,23 @@
+@import '../../styles/fonts.scss';
+
+.signin-form {
+  @include flex(column, center, center);
+  padding: 20px;
+
+  &__header {
+    font-family: 'SoinSansNeue Normal', sans-serif;
+    @include font($font-size: 2rem, $line-height: $line-height-sm, $color: $text-color);
+    text-align: center;
+  }
+
+  &>div {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  &__error {
+    font-family: 'SoinSansNeue Normal', sans-serif;
+    @include font($font-size: 1.1rem, $line-height: $line-height-sm, $color: $error);
+    margin: 15px 0;
+  }
+}
