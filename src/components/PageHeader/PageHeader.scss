@@ -1,0 +1,33 @@
+.header {
+  @include set-size($width: auto, $height: 80px);
+  @include flex($content: space-between, $items: center);
+  padding: 0 20px;
+  margin: 0 auto;
+  background-color: $white;
+  border-bottom: $color-theme-grey solid 1px;
+
+  &__title {
+    @include font($font-size: 1.5rem, $line-height: $line-height-sm, $color: $black);
+    @include screen-sm() {
+      text-align: center;
+      flex-basis: 100%;
+    }
+  }
+
+  &__btnBack {
+    @include set-size($width: 25px, $height: 25px);
+    @include flex($content: center, $items: center);
+    background: none;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    @include screen-sm() {
+      order: -1;
+      margin-right: 10px;
+    }
+  }
+}
