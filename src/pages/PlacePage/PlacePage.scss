@@ -1,0 +1,16 @@
+.place-page {
+  @include set-size(100%, 100%);
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.place {
+  &__details {
+    @include flex($content: space-between);
+
+    @include screen-lg() {
+      @include flex($direction: column);
+
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.hours__list {
+  list-style-type: none;
+
+  li {
+    @include flex($items: center);
+    padding: 10px;
+    border-bottom: 1px solid $light-grey;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &::before {
+      @include set-size(8px, 8px);
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      background-color: $color-green2;
+      margin-right: 8px;
+    }
+  }
+}

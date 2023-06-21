@@ -6,12 +6,7 @@
   $tik-height: 12px;
 
   display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: $size;
-  height: $size;
+  @include set-size($size,$size);
 
   div {
     transform-origin: $size*0.5 $size*0.5;
