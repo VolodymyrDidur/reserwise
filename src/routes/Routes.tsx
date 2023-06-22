@@ -1,10 +1,11 @@
-import {Route, Switch} from 'react-router-dom';
-import {MainPage} from '../pages';
+import { Route, Switch } from 'react-router-dom';
+import { MainPage, PlacePage } from '../pages';
 
 const Routes = () => {
     return (
         <Switch>
-            <Route path="/" render={() => <MainPage>Hello</MainPage>}/>
+            <Route exact path="/" render={() => <MainPage>Hello</MainPage>}/>
+            <Route path="/place/:id" render={() => <PlacePage/>}/>
         </Switch>
     );
 };

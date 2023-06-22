@@ -1,0 +1,31 @@
+.place__subtitle_container {
+  @include flex($content: space-between, $items: center);
+  margin-top: 30px;
+
+  .place__subtitle {
+    @include flex($content: space-between, $items: center);
+
+    &_icon {
+      @include set-size(1.5rem, 1.5rem);
+      margin-right: 10px;
+    }
+
+    &_text {
+      @include font($font-size: 1.9rem, $line-height: $line-height-sm, $font-weight: bold);
+
+      @include screen-md() {
+        @include font($font-size: 1.5rem, $line-height: $line-height-sm, $font-weight: bold);
+      }
+    }
+  }
+}
+
+.btn__popup {
+  @include font($font-size: 0.9rem, $line-height: $line-height-sm, $color: $dark-grey);
+  @include flex($content: space-between, $items: center);
+
+  span {
+    @include flex($items: center);
+    margin-left: 5px;
+  }
+}

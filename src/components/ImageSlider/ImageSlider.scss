@@ -1,0 +1,67 @@
+.slider {
+  position: relative;
+  width: 45%;
+
+  &__image {
+    @include set-size(100%, 100%);
+    border-radius: 30px;
+  }
+
+  &__controls {
+    @include flex(row, space-between, center);
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &_btnPrev,
+    &_btnNext {
+      @include flex($content: center, $items: center);
+      @include set-size(1.5rem, 1.5rem);
+      margin: 0 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  &__indicators {
+    @include flex($content: center);
+    @include set-size(100%, auto);
+    position: absolute;
+    top: 95%;
+    transform: translateY(-95%);
+
+    &_item {
+      @include set-size(10px, 10px);
+      background-color: $primary-light;
+      border-radius: 50%;
+      opacity: 0.6;
+      margin: 0 8px;
+      cursor: pointer;
+    }
+
+    &_active {
+      background-color: $white;
+      opacity: 1;
+    }
+  }
+
+  @include screen-lg() {
+    width: 100%;
+  }
+  @include screen-sm() {
+    &__controls {
+      &_btnPrev,
+      &_btnNext {
+        @include set-size(1rem, 1rem);
+      }
+    }
+    &__indicators {
+      &_item {
+        @include set-size(6px, 6px);
+      }
+    }
+  }
+}

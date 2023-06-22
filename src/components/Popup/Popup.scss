@@ -1,0 +1,41 @@
+.popup {
+  &__overlay {
+    @include set-size(100%, 100%);
+    @include flex($content: center, $items: center);
+    position: fixed;
+    padding: 0 20px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  &__wrapper {
+    @include set-size(100%);
+    background-color: $white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    border-radius: 10px;
+  }
+
+  &__header {
+    @include flex($content: space-between, $items: center);
+    margin-bottom: 10px;
+    border-bottom: 1px solid $light-grey;
+    padding-bottom: 10px;
+
+    &_title {
+      @include font($font-size: 1.5rem, $line-height: $line-height-sm, $font-weight: bold);
+    }
+
+    &_btnClose {
+      @include flex($items: center);
+      border: none;
+    }
+  }
+
+  &__body {
+    @include font($font-size: 1rem, $line-height: $line-height-sm);
+  }
+}

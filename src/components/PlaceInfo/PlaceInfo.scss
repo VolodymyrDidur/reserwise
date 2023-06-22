@@ -1,0 +1,25 @@
+.place {
+  &__info {
+    @include set-size(50%, auto);
+
+    &_description {
+      margin-top: 30px;
+      color: $dark-grey;
+    }
+
+    &_btns {
+      @include set-size(100%, auto);
+      @include flex($content: space-between, $items: center);
+      margin-top: 60px;
+    }
+
+    @include screen-lg() {
+      @include set-size(100%, auto);
+    }
+    @include screen-sm() {
+      &_btns {
+        margin-top: 30px;
+      }
+    }
+  }
+}
