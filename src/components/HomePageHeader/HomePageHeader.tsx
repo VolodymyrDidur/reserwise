@@ -8,8 +8,8 @@ export const HomePageHeader: React.FC<{}> = ({}) => {
     const { isAuthenticated } = useAuth();
     const { user } = useUser();
 
-    const greeting = !isAuthenticated ? `Welcome, ${user.given_name} 👋` : 'Welcome, guest 👋';
-    const UserImage = !isAuthenticated ? user.picture : defaultUserImage ;
+    const greeting = isAuthenticated ? `Welcome, ${user.given_name} 👋` : 'Welcome, guest 👋';
+    const UserImage = isAuthenticated ? user.picture : defaultUserImage ;
     
     return (
         <header className="header">
