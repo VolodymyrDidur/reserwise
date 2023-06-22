@@ -6,10 +6,10 @@ import defaultUserImage from '../../assets/images/user-icon.png'
 
 export const HomePageHeader: React.FC<{}> = ({}) => {
     const { isAuthenticated } = useAuth();
-    const user = useUser();
+    const { user } = useUser();
 
-    const greeting = !isAuthenticated ? `Welcome, ${user.name} 👋` : 'Welcome, guest 👋';
-    const UserImage = !isAuthenticated ? user.image : defaultUserImage ;
+    const greeting = !isAuthenticated ? `Welcome, ${user.given_name} 👋` : 'Welcome, guest 👋';
+    const UserImage = !isAuthenticated ? user.picture : defaultUserImage ;
     
     return (
         <header className="header">
