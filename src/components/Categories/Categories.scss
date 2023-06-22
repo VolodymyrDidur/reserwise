@@ -1,0 +1,36 @@
+.categories-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .categories-scroll {
+    display: flex;
+  }
+  
+  .category {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 10px 20px;
+    position: relative;
+  }
+  
+  .category-image {
+    background-color: white;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .category-text {
+    color: black;
+    text-align: center;
+    margin-top: 10px; 
+    word-break: break-word;
+  }
+  

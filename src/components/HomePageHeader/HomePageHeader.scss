@@ -1,0 +1,36 @@
+.header{
+    display: flex;
+    align-items: center;
+    padding: 1%;
+    justify-content: space-between;
+    font-weight: bold;
+
+    &__user {
+        display: flex;
+    }
+    
+    &__icon {
+      margin-right: 10px;
+
+      & img {
+        width: 20px;
+      }
+    }
+  }
+
+.search {
+    position: relative;
+
+    & input {
+      padding-left: 30px;
+      background-image: url('../../assets/images/find.png');
+      background-position: 5px center;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      height: 30px;
+      border: none;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      outline: none;
+    }   
+  }
