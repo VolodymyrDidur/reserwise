@@ -1,0 +1,10 @@
+  .home-page {
+    @include set-size(100%, 100%);
+    background-color: $color-theme-grey;
+    padding: 20px 40px;
+    box-sizing: border-box;
+  }
+
+  .categories {
+    padding-top: 40px;
+  }
