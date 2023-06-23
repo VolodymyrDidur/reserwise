@@ -1,0 +1,12 @@
+.dark__button {
+  @include button($white, $black, center, 10px);
+
+  padding: 10px 5px;
+  min-width: 150px;
+  transition: 0.3s ease;
+
+  &:hover {
+    @include button($black, $white);
+    border: 1px solid $black;
+  }
+}

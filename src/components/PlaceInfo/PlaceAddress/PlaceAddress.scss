@@ -1,0 +1,10 @@
+.map__wrapper {
+  @include set-size(100%, 40%);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 30px;
+
+  .map {
+    @include set-size(100%, 100%)
+  }
+}

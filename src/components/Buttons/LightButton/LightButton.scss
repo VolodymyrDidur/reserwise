@@ -1,0 +1,12 @@
+.light__button {
+  @include button($black, $white, center, 10px);
+
+  min-width: 150px;
+  border: 1px solid $black;
+  padding: 10px 5px;
+  transition: 0.3s ease;
+
+  &:hover {
+    @include button($color: $white, $background-color: $black);
+  }
+}
