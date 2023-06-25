@@ -1,0 +1,45 @@
+.place__features {
+  margin-top: 50px;
+
+  &_category {
+    @include flex($content: space-around);
+    @include set-size(100%, auto);
+
+    &__item {
+      @include flex($direction: column, $items: center);
+      padding: 5px;
+    }
+  }
+
+  &_categories {
+    @include flex($direction: column, $content: space-around);
+    @include set-size(100%, auto);
+  }
+
+  @include screen-sm() {
+    margin-top: 30px;
+  }
+}
+
+.emoji {
+  @include flex($content: center, $items: center);
+  @include set-size(70px, 70px);
+  @include font($font-size: 1.5rem, $line-height: $line-height-sm);
+  background-color: $white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+
+  @include screen-sm() {
+    @include set-size(50px, 50px);
+    @include font($font-size: 1rem, $line-height: $line-height-sm);
+  }
+}
+
+.text {
+  @include font($font-size: 1rem, $line-height: $line-height-sm);
+
+  @include screen-sm() {
+    @include font($font-size: 0.8rem, $line-height: $line-height-sm);
+  }
+}

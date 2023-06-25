@@ -19,6 +19,17 @@
   line-height: $line-height;
 }
 
+@mixin button($color,$background-color,$text:null,$border-radius:null) {
+  color: $color;
+  background-color: $background-color;
+  @if $text {
+    text-align: $text;
+  }
+  @if $border-radius {
+    border-radius: $border-radius;
+  }
+}
+
 // Flex helpers
 @mixin flex($direction: row, $content: flex-start, $items: stretch) {
   display: flex;
@@ -38,18 +49,19 @@
 // Media helpers
 @mixin media-breakpoint-up($name) {
   $value: map-get(
-    $map: $breakpoints,
-    $key: $name,
+          $map: $breakpoints,
+          $key: $name,
   );
 
   @media (min-width: $value) {
     @content;
   }
 }
+
 @mixin media-breakpoint-down($name) {
   $value: map-get(
-    $map: $breakpoints,
-    $key: $name,
+          $map: $breakpoints,
+          $key: $name,
   );
 
   @media (max-width: $value) {
@@ -62,21 +74,25 @@
     @content;
   }
 }
+
 @mixin screen-md() {
   @include media-breakpoint-down(md) {
     @content;
   }
 }
+
 @mixin screen-lg() {
   @include media-breakpoint-down(lg) {
     @content;
   }
 }
+
 @mixin screen-xl() {
   @include media-breakpoint-down(xl) {
     @content;
   }
 }
+
 @mixin screen-xxl() {
   @include media-breakpoint-down(xxl) {
     @content;
