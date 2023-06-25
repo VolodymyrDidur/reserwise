@@ -1,4 +1,4 @@
-import { EmailIcon,UserIcon } from "../../assets/icons";
+import { EmailIcon,UserIcon } from "../../../assets/icons";
 import "./AccountInfo.scss"
 
 interface UserInfoProps{
@@ -11,7 +11,7 @@ export const AccountInfo: React.FC<UserInfoProps> = ({given_name,family_name,ema
     return(
         <div className="personalData">
                 <div className="personalData__block">
-                <h3 className="personalData__title">Персональні дані</h3>
+                <h3 className="personalData__title">Personal data</h3>
                 <ul className="personalData__list">
                     <li className="list__item">
                         <div className="list__item__icon">
@@ -19,7 +19,7 @@ export const AccountInfo: React.FC<UserInfoProps> = ({given_name,family_name,ema
                         </div>
                         
                         <div className="item__data">
-                            <p className="underText">Ім'я</p>
+                            <p className="underText">Full name</p>
                             <p>{given_name + " "}{family_name}</p>
                         </div></li>
                     <li className="list__item"> 
@@ -28,7 +28,7 @@ export const AccountInfo: React.FC<UserInfoProps> = ({given_name,family_name,ema
                     </div>
                          
                         <div className="item__data">
-                        <p className="underText">Електронна адреса</p>
+                        <p className="underText">Email address</p>
                         <p>{email}</p>
                         </div>
                     </li>

@@ -1,0 +1,15 @@
+@import '../AccountInfo/AccountInfo.scss';
+
+.signOut{
+    @extend .personalData;
+    &__block{
+        @extend .personalData__block;
+        padding: 20px 4px;
+        padding-bottom: 4px;
+        
+    }
+    &__title{
+        @extend .personalData__title;
+        margin-left: 16px;
+    }
+}

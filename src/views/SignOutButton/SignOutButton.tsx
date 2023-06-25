@@ -17,7 +17,7 @@ export const SignOutButton: React.FC<{ className: string }> = ({ className }) =>
       <span className='signout-button__icon-container'>
         <SignOutIcon />
       </span>
-      Sign out
+      <span className='signout-button__text'>Sign out</span>
     </button>
   )
 }
