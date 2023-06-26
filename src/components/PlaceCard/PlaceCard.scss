@@ -1,0 +1,112 @@
+@mixin screen-xs {
+    @media (max-width: (320px)) {
+      @content;
+    }
+  }
+
+.place__container {
+    @include font($font-size: 1rem, $line-height: $line-height-sm, $color: $black);
+    @include set-size(400px, 360px);
+    position: relative;
+    padding: 7px 0px 0px 5px;
+    margin: 0px 0px 0px 50px;
+    background-color: $white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include screen-md() {
+        @include set-size(320px, 280px);
+        margin: auto 10px 0px ;
+        padding: 7px 0px 0px 5px;
+    }
+
+    @include screen-xs() {
+        @include set-size(260px, 280px);
+        padding: 7px 0px 0px 5px;
+        margin: auto -10px 0px ;
+    }
+
+    & img {
+      @include set-size(390px, 250px);
+      object-fit: cover;
+      border-radius: 20px;
+
+      @include screen-md() {
+        @include set-size(310px, 180px);
+      }
+
+      @include screen-xs() {
+        @include set-size(250px, 180px);
+      }
+    }
+    
+  }
+  
+.background__heart,
+.background__time,
+.background__type {
+    position: absolute;
+    @include flex($content:center, $items:center);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 13px;
+}
+  
+.background__heart {
+    @include set-size(30px, 30px);
+    top: 10px;
+    left: 360px;
+
+    @include screen-md(){
+        top: 10px;
+        left: 280px;
+    }
+    @include screen-xs(){
+        top: 10px;
+        left: 220px;
+    }
+}
+  
+.background__time {
+    @include set-size(80px, 30px);
+    color: $white;
+    top: 220px;
+    left: 15px;
+
+    @include screen-md(){
+        top: 150px;
+    }
+    @include screen-xs(){
+         top: 150px;
+    }
+}
+  
+.background__type {
+    @include set-size(90px, 30px);
+    top: 220px;
+    left: 295px;
+
+    @include screen-md(){
+        top: 150px;
+        left: 215px;
+    }
+    @include screen-xs(){
+        top: 150px;
+        left: 160px;
+    }
+}
+  
+.place__name {
+    padding: 3px 0px 0px 5px;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+  
+.place__description {
+      padding: 0px 10px 0px 5px;
+      margin-top: 5px;
+      overflow: hidden;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+}

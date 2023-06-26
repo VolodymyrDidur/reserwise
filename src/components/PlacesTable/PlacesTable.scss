@@ -1,115 +1,29 @@
-.table {
-  @include font($font-size: 0.813rem, $line-height: $line-height-sm, $color: $black);
-}
-
-.place__container {
-  @include set-size(400px, 360px);
-  position: relative;
-  padding: 7px 0px 0px 5px;
-  margin: 0px 0px 30px 40px;
-  background-color: $white;
-  border-radius: 20px;
-  overflow: hidden;
-
-  & img {
-    @include set-size(390px, 250px);
-    object-fit: cover;
-    border-radius: 20px;
+@mixin grid__media($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
   }
 }
 
-.background__heart,
-.background__time,
-.background__type {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 13px;
-}
+.places__table {
+  grid-template-columns: repeat(4, 400px);
+  display: grid;
+  grid-gap: 40px;
 
-.background__heart {
-  @include set-size(30px, 30px);
-  top: 10px;
-  left: 360px;
-}
-
-.background__time {
-  @include set-size(80px, 30px);
-  color: $white;
-  top: 220px;
-  left: 15px;
-}
-
-.background__type {
-  @include set-size(90px, 30px);
-  top: 220px;
-  left: 295px;
-}
-
-.LocIcon {
-  @include set-size(20px, 20px);
-}
-
-.place__name {
-  padding: 3px 0px 0px 5px;
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  white-space: nowrap; 
-}
-
-.place__description {
-    padding: 0px 10px 0px 5px;
-    margin-top: 5px;
-    overflow: hidden;
-    word-wrap: break-word;
-    text-overflow: ellipsis;
-}
-
-@media screen and (max-width: 1024px){
-  .place__container{
-    margin: auto 30px 30px ;
+  @include grid__media(1440px) {
+    grid-template-columns: repeat(3, 400px);
   }
-}  
-
-@media screen and (max-width: 768px) {
-  .place__container {
-    @include set-size(320px, 280px);
-    margin: auto 20px 20px ;
-
-    .place__photo{
-      @include set-size(315px, 180px);
-    }
-
-    .background__time{
-      top: 150px;
-    }
-    .background__type{
-      top: 150px;
-      left: 230px;
-    }
-    .background__heart{
-      top: 10px;
-      left: 285px;
-    }
+  @include grid__media(1024px) {
+    grid-template-columns: repeat(2, 400px);
+  }
+  @include grid__media(768px) {
+    grid-template-columns: repeat(2, 320px);
+    grid-gap: 20px;
+  }
+  @include grid__media(425px) {
+    grid-template-columns: repeat(1, 320px);
+  }
+  @include grid__media(320px) {
+    grid-template-columns: repeat(1, 280px);
+    grid-gap: 20px;
   }
 }
-
-@media screen and (max-width: 425px){
-  .place__container{
-    margin: auto 0px 20px;
-  }
-}  
-
-@media screen and (max-width: 375px){
-  .place__container{
-    margin: auto 0px 20px;
-    @include set-size(320px, 280px);
-
-    img {
-      @include set-size(315px, 180px);
-    }
-  }
-}  
