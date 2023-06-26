@@ -2,7 +2,6 @@
     @include flex(row, center, center);
     margin-top: 30px;
    
-
     &__image{
         width: 12%;
         border-radius: 50%;
@@ -25,5 +24,4 @@
                 width: 55%;
             }
     }
-
 }
