@@ -11,14 +11,18 @@
 
   &__icon-container {
     display: inline-block;
-    height: 80%;
     background-color: $color-dark-peach;
-    border-radius: 7px;
+    border-radius: 10px;
     margin-right: $input-padding-x ;
 
     &>svg {
       fill: $white;
-      @include set-size(80%, 100%);
+      object-fit: cover;
+      padding: 5px;
+      @include set-size($width: 40px, $height: 36px);
     }
+  }
+  &__text{
+    @include font($font-size:16px,$line-height:1.2,  $font-weight:500);
   }
 }
