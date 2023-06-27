@@ -1,0 +1,12 @@
+@import '../AccountInfo/AccountInfo.scss';
+
+.account-settings{
+    @extend .personalData;
+    &__block{
+        @extend .personalData__block;
+        padding: 20px;
+    }
+    &__title{
+        @extend .personalData__title;
+    }
+}

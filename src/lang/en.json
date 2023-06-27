@@ -1,3 +1,35 @@
 {
-  "signin":"Sign in"
+  "signin":"Sign in",
+  "signinError":"Sign in failed. Try again.",
+  "accountSettings":"Account settings",
+  "personalData":"Personal data",
+  "fullName":"Full name",
+  "email": "Email address",
+  "account":"Account",
+  "signout":"Sign out",
+  "categories":"Categories",
+  "categoryList":{
+    "Fastfood":"Fastfood",
+    "Vegan":"Vegan",
+    "Sushi":"Sushi",
+    "Pizza":"Pizza",
+    "Desserts":"Desserts",
+    "Breakfast":"Breakfast",
+    "Karaoke":"Karaoke",
+    "Hookah":"Hookah",
+    "Alcohol":"Alcohol",
+    "Restaurant":"Restaurant",
+    "European":"European",
+    "Terrace":"Terrace",
+    "Board games":"Board games",
+    "Video games":"Video games",
+    "With animals":"With animals",
+    "Inclusivity":"Inclusivity",
+    "Open":"Open",
+    "With children":"With children"
+  },
+  "welcome":"Welcome",
+  "welcomeGuest": "Welcome, guest",
+  "search":"Search restaurant...",
+  "settings":"Settings"
 }

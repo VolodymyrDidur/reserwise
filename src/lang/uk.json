@@ -1,4 +1,35 @@
 {
   "signin":"Вхід",
-  "signinError":"Не вдалося увійти. Спробуйте ще раз."
+  "signinError":"Не вдалося увійти. Спробуйте ще раз.",
+  "accountSettings":"Налаштування аккаунту",
+  "personalData":"Персональні дані",
+  "fullName":"Ім'я",
+  "email": "Електронна пошта",
+  "account":"Обліковий запис",
+  "signout":"Вийти",
+  "categories":"Категорії",
+  "categoryList":{
+    "Fastfood":"Фастфуд",
+    "Vegan":"Веган",
+    "Sushi":"Суші",
+    "Pizza":"Піца",
+    "Desserts":"Десерти",
+    "Breakfast":"Сніданок",
+    "Karaoke":"Караоке",
+    "Hookah":"Кальян",
+    "Alcohol":"Алкоголь",
+    "Restaurant":"Ресторан",
+    "European":"Європейська",
+    "Terrace":"Тераса",
+    "Board games":"Настільні ігри",
+    "Video games":"Відео ігри",
+    "With animals":"З тваринами",
+    "Inclusivity":"Інклюзивність",
+    "Open":"Відкритий",
+    "With children":"З дітьми"
+  },
+  "welcome":"Вітаємо",
+  "welcomeGuest": "Вітаємо, гість",
+  "search":"Шукати ресторан...",
+  "settings":"Налаштування"
 }

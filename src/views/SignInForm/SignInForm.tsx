@@ -9,9 +9,9 @@ import { useTranslation } from 'react-i18next';
 export const SignInForm: React.FC<{}> = ({ }) => {
   const [isFailed, setIsFailed] = React.useState(false);
 
-  const {setUser} = useUser();
-  const {t}=useTranslation();
-  
+  const { setUser } = useUser();
+  const { t } = useTranslation();
+
   const handleSuccess = (response) => {
     const userObject = jwt_decode(response.credential);
     setUser(userObject);
@@ -40,7 +40,9 @@ export const SignInForm: React.FC<{}> = ({ }) => {
           {
             t('signinError')
           }
-        </p>)}
+        </p>
+        )
+      }
     </form>
   )
 }
