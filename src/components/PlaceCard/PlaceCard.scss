@@ -6,42 +6,29 @@
 
 .place__container {
     @include font($font-size: 1rem, $line-height: $line-height-sm, $color: $black);
-    @include set-size(400px, 360px);
+    @include set-size(90%, 360px);
     position: relative;
+    margin-bottom: 20px;
     padding: 7px 0px 0px 5px;
-    margin: 0px 0px 0px 50px;
     background-color: $white;
     border-radius: 20px;
     overflow: hidden;
 
-    @include screen-md() {
-        @include set-size(320px, 280px);
-        margin: auto 10px 0px ;
-        padding: 7px 0px 0px 5px;
-    }
-
-    @include screen-xs() {
-        @include set-size(260px, 280px);
-        padding: 7px 0px 0px 5px;
-        margin: auto -10px 0px ;
+    @include screen-md(){
+        height: 320px
     }
 
     & img {
-      @include set-size(390px, 250px);
+      @include set-size(99%, 250px);
       object-fit: cover;
       border-radius: 20px;
 
-      @include screen-md() {
-        @include set-size(310px, 180px);
-      }
-
-      @include screen-xs() {
-        @include set-size(250px, 180px);
-      }
+      @include screen-md(){
+        height: 200px
+        }
     }
-    
-  }
-  
+}
+
 .background__heart,
 .background__time,
 .background__type {
@@ -54,59 +41,40 @@
   
 .background__heart {
     @include set-size(30px, 30px);
-    top: 10px;
-    left: 360px;
-
-    @include screen-md(){
-        top: 10px;
-        left: 280px;
-    }
-    @include screen-xs(){
-        top: 10px;
-        left: 220px;
-    }
+    top: 3%;
+    right: 3%;
 }
   
 .background__time {
     @include set-size(80px, 30px);
     color: $white;
     top: 220px;
-    left: 15px;
+    left: 3%;
 
     @include screen-md(){
-        top: 150px;
-    }
-    @include screen-xs(){
-         top: 150px;
+        top: 170px
     }
 }
   
 .background__type {
     @include set-size(90px, 30px);
     top: 220px;
-    left: 295px;
+    right: 3%;
 
     @include screen-md(){
-        top: 150px;
-        left: 215px;
-    }
-    @include screen-xs(){
-        top: 150px;
-        left: 160px;
+        top: 170px
     }
 }
   
 .place__name {
     padding: 3px 0px 0px 5px;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    @include dots;
     white-space: nowrap; 
 }
   
 .place__description {
       padding: 0px 10px 0px 5px;
       margin-top: 5px;
-      overflow: hidden;
+      @include dots;
       word-wrap: break-word;
-      text-overflow: ellipsis;
 }

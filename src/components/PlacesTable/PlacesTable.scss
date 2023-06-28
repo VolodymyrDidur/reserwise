@@ -5,25 +5,24 @@
 }
 
 .places__table {
-  grid-template-columns: repeat(4, 400px);
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   display: grid;
-  grid-gap: 40px;
+  padding:20px 0px 0px 40px;
 
   @include grid__media(1440px) {
-    grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    padding:20px 0px 0px 30px;
   }
   @include grid__media(1024px) {
-    grid-template-columns: repeat(2, 400px);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding:20px 0px 0px 50px;
   }
   @include grid__media(768px) {
-    grid-template-columns: repeat(2, 320px);
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    padding:20px 0px 0px 30px;
   }
   @include grid__media(425px) {
-    grid-template-columns: repeat(1, 320px);
-  }
-  @include grid__media(320px) {
-    grid-template-columns: repeat(1, 280px);
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    padding:20px 0px 0px 10px;
   }
 }
