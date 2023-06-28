@@ -1,0 +1,67 @@
+
+.personalData{
+    @include flex(row, center);
+    margin-top: 30px;
+
+    &__block{
+        border-radius: 15px;
+        width: 35%;
+        background-color:$white;
+        padding: 20px;
+        box-shadow: 2px 3px 7px 0px rgba(0,0,0,0.75);
+
+
+        @include screen-xl() {
+            width: 40%;
+          }
+
+        @include screen-lg() {
+            width: 50%;
+          }
+
+        @include screen-md() {
+            width: 60%;
+          }
+
+        @include screen-sm() {
+            width: 70%;
+        }
+    }
+    &__title{
+        font-weight: normal
+    }
+
+}
+
+.list__item{
+    @include flex(row,flex-start);
+  
+  &:not(:last-child){ 
+    margin: 20px 0px;
+  }
+
+  &__icon{
+    background-color:$color-dark-peach;
+   
+    @include set-size($width: 40px, $height: 40px);
+    padding: 5px;
+    border-radius: 10px;
+    margin-right:  $input-padding-x ;
+    
+        &.blue-bg{
+        background-color: $color-blue;
+        }
+    }
+
+    .item__data{
+       @include font($font-size:14px,$line-height:1.2,  $font-weight:bold);
+
+
+        .underText{
+            @include font($font-size:12px,$line-height:1.2,  $font-weight:normal);
+            margin-bottom: 4px;
+            margin-top: 2px;
+        }
+    }
+
+}

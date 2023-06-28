@@ -17,9 +17,11 @@
   &__btnBack {
     @include set-size($width: 25px, $height: 25px);
     @include flex($content: center, $items: center);
+    margin: 0 2%;
     background: none;
     cursor: pointer;
     border: none;
+
 
     &:hover {
       filter: brightness(1.2);

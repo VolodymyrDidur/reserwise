@@ -1,0 +1,27 @@
+.avatar{
+    @include flex(row, center, center);
+    margin-top: 30px;
+   
+    &__image{
+        width: 12%;
+        border-radius: 50%;
+        object-fit: cover;
+        border : 4px solid gray;
+
+        @include screen-xl() {
+            width: 20%;
+          }
+
+        @include screen-lg() {
+            width: 35%;
+          }
+
+        @include screen-md() {
+            width: 45%;
+          }
+
+        @include screen-sm() {
+                width: 55%;
+            }
+    }
+}

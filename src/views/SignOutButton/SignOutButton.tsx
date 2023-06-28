@@ -13,11 +13,11 @@ export const SignOutButton: React.FC<{ className: string }> = ({ className }) =>
     localStorage.clear();
   }
   return (
-    <button className={`signout-button ${className}`} type='button' onClick={handleSignOut}>
+    <button className={`signout-button ${ className }`} type='button' onClick = { handleSignOut }>
       <span className='signout-button__icon-container'>
         <SignOutIcon />
       </span>
-      Sign out
+      <span className='signout-button__text'>Sign out</span>
     </button>
   )
 }
