@@ -1,28 +1,18 @@
-@mixin grid__media($breakpoint) {
-  @media (max-width: $breakpoint) {
-    @content;
-  }
-}
-
 .places__table {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   display: grid;
   padding:20px 0px 0px 40px;
 
-  @include grid__media(1440px) {
+  @include screen-xxl {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     padding:20px 0px 0px 30px;
   }
-  @include grid__media(1024px) {
+  @include screen-lg {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     padding:20px 0px 0px 50px;
   }
-  @include grid__media(768px) {
+  @include screen-md {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     padding:20px 0px 0px 30px;
-  }
-  @include grid__media(425px) {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    padding:20px 0px 0px 10px;
   }
 }
