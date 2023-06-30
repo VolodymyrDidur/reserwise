@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import PlaceCard, { FoodEstablishmentDataProps } from "../PlaceCard/PlaceCard";
-import { FavouritesContext } from "../../contexts/FavoritesContext";
+import useFavorites from '../../hooks/useFavorites';
 import FavoritesImage from '../../assets/images/favoritePageImage.png';
 import "./FavoritesTable.scss"
 
 const FavouritesTable: React.FC = () => {
-  const { favourites } = useContext(FavouritesContext);
+  const favourites = useFavorites();
 
   if (favourites.length === 0) 
   return (
@@ -26,7 +26,6 @@ const FavouritesTable: React.FC = () => {
         ))}
       </div>
     </div>
-    
   );
 };
 

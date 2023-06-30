@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import './PlaceCard.scss'
 import { HeartIcon, LocationIcon, RedHeartIcon } from "../../assets/icons";
 import { emojiMap } from "../../mocks";
-import { UserContext } from "../../auth/authContext";
-import { FavouritesContext } from "../../contexts/FavoritesContext";
+import useUser from '../../hooks/useUser';
 
 interface IDetailsInstitution {
   categories: string[];
@@ -25,18 +24,33 @@ interface PlaceCardProps {
 }
 
 const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
-  const { user } = useContext(UserContext);
-  const { favourites, addFavourite, removeFavourite } = useContext(FavouritesContext);
+  const { user } = useUser();
+  const [isFavourite, setIsFavourite] = useState<boolean>(false);
 
-  const isFavourite = favourites.some(favourite => favourite.id === item.id);
+  useEffect(() => {
+    const updateFavouriteStatus = () => {
+      setIsFavourite(Boolean(localStorage.getItem(`item-${item.id}`)));
+    };
+    updateFavouriteStatus();
+
+    window.addEventListener('updateFavorites', updateFavouriteStatus);
+
+    return () => {
+      window.removeEventListener('updateFavorites', updateFavouriteStatus);
+    }
+  }, [item.id]);
 
   const onHeartClick = () => {
     if(user){
       if(isFavourite){
-        removeFavourite(item.id);
-      }else{
-        addFavourite(item);
+        localStorage.removeItem(`item-${item.id}`);
+        setIsFavourite(false);
+      } else {
+        localStorage.setItem(`item-${item.id}`, JSON.stringify(item));
+        setIsFavourite(true);
       }
+      
+      window.dispatchEvent(new Event('updateFavorites'));
     }
   }
 
