@@ -27,16 +27,18 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
   const { user } = useUser();
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
 
-  useEffect(() => {
-    const updateFavouriteStatus = () => {
-      setIsFavourite(Boolean(localStorage.getItem(`item-${item.id}`)));
-    };
-    updateFavouriteStatus();
+  const updateFavouriteStatus = (id: number) => {
+    setIsFavourite(Boolean(localStorage.getItem(`item-${id}`)));
+  };
 
-    window.addEventListener('updateFavorites', updateFavouriteStatus);
+  useEffect(() => {
+    updateFavouriteStatus(item.id);
+
+    const handleUpdateFavorites = () => updateFavouriteStatus(item.id);
+    window.addEventListener('updateFavorites', handleUpdateFavorites);
 
     return () => {
-      window.removeEventListener('updateFavorites', updateFavouriteStatus);
+      window.removeEventListener('updateFavorites', handleUpdateFavorites);
     }
   }, [item.id]);
 
@@ -46,7 +48,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
         localStorage.removeItem(`item-${item.id}`);
         setIsFavourite(false);
       } else {
-        localStorage.setItem(`item-${item.id}`, JSON.stringify(item));
+        localStorage.setItem(`item-${item.id}`, item.id.toString());
         setIsFavourite(true);
       }
       
