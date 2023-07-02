@@ -3,11 +3,14 @@ import { GoogleLogin } from '@react-oauth/google';
 import useUser from '../../hooks/useUser';
 import jwt_decode from 'jwt-decode';
 import './SignInForm.scss';
+import { useTranslation } from 'react-i18next';
+
 
 export const SignInForm: React.FC<{}> = ({ }) => {
   const [isFailed, setIsFailed] = React.useState(false);
 
-  const {setUser} = useUser();
+  const { setUser } = useUser();
+  const { t } = useTranslation();
 
   const handleSuccess = (response) => {
     const userObject = jwt_decode(response.credential);
@@ -20,7 +23,7 @@ export const SignInForm: React.FC<{}> = ({ }) => {
 
   return (
     <form className='signin-form'>
-      <h3 className='signin-form__header'>Sign in</h3>
+      <h3 className='signin-form__header'>{t('signin')}</h3>
       <GoogleLogin
         onSuccess={handleSuccess}
         onError={handleError}
@@ -34,8 +37,12 @@ export const SignInForm: React.FC<{}> = ({ }) => {
       />
       {isFailed &&
         (<p className='signin-form__error'>
-          Sign in failed. Try again.
-        </p>)}
+          {
+            t('signinError')
+          }
+        </p>
+        )
+      }
     </form>
   )
 }
