@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './PlaceCard.scss'
-import { HeartIcon, LocationIcon } from "../../assets/icons";
+import { HeartIcon, LocationIcon, RedHeartIcon } from "../../assets/icons";
 import { emojiMap } from "../../mocks";
+import useUser from '../../hooks/useUser';
 
 interface IDetailsInstitution {
   categories: string[];
@@ -23,13 +24,48 @@ interface PlaceCardProps {
 }
 
 const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
+  const { user } = useUser();
+  const [isFavourite, setIsFavourite] = useState<boolean>(false);
+
+  const updateFavouriteStatus = (id: number) => {
+    const favourites = JSON.parse(localStorage.getItem('favouritePlaces') || '[]');
+    setIsFavourite(favourites.includes(id));
+  };
+
+  useEffect(() => {
+    updateFavouriteStatus(item.id);
+
+    const handleUpdateFavorites = () => updateFavouriteStatus(item.id);
+    window.addEventListener('updateFavorites', handleUpdateFavorites);
+
+    return () => {
+      window.removeEventListener('updateFavorites', handleUpdateFavorites);
+    }
+  }, [item.id]);
+
+  const onHeartClick = () => {
+    if(user){
+      const favourites = JSON.parse(localStorage.getItem('favouritePlaces') || '[]');
+      const index = favourites.indexOf(item.id);
+
+      if(index !== -1){
+        favourites.splice(index, 1);
+      } else {
+        favourites.push(item.id);
+      }
+  
+      localStorage.setItem('favouritePlaces', JSON.stringify(favourites));
+        
+      window.dispatchEvent(new Event('updateFavorites'));
+    }
+  }
 
   return (
     <div key={item.id}>
       <div className="place__container">
         <img className="place__photo" src={item.images[0]} alt={item.name} />
-        <button className='background__heart'>
-            <HeartIcon />
+        <button className='background__heart' onClick={onHeartClick}>
+          {isFavourite ? <RedHeartIcon /> : <HeartIcon />}
         </button>
         <div className="background__time">
           <LocationIcon width={20} height={20} />
