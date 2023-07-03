@@ -28,7 +28,8 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
 
   const updateFavouriteStatus = (id: number) => {
-    setIsFavourite(Boolean(localStorage.getItem(`item-${id}`)));
+    const favourites = JSON.parse(localStorage.getItem('favouritePlaces') || '[]');
+    setIsFavourite(favourites.includes(id));
   };
 
   useEffect(() => {
@@ -44,14 +45,17 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
 
   const onHeartClick = () => {
     if(user){
-      if(isFavourite){
-        localStorage.removeItem(`item-${item.id}`);
-        setIsFavourite(false);
+      const favourites = JSON.parse(localStorage.getItem('favouritePlaces') || '[]');
+      const index = favourites.indexOf(item.id);
+
+      if(index !== -1){
+        favourites.splice(index, 1);
       } else {
-        localStorage.setItem(`item-${item.id}`, item.id.toString());
-        setIsFavourite(true);
+        favourites.push(item.id);
       }
-      
+  
+      localStorage.setItem('favouritePlaces', JSON.stringify(favourites));
+        
       window.dispatchEvent(new Event('updateFavorites'));
     }
   }

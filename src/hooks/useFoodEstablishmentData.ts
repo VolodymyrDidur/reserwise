@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { foodEstablishmentData } from '../mocks/foodEstablishmentData';
 import { FoodEstablishmentDataProps } from "../components/PlaceCard/PlaceCard";
 
-const useData = () => {
+const useFoodEstablishmentData = () => {
   const [data, setData] = useState<FoodEstablishmentDataProps[]>([]);
 
   useEffect(() => {
@@ -12,4 +12,4 @@ const useData = () => {
   return data;
 };
 
-export default useData;
+export default useFoodEstablishmentData;

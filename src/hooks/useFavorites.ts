@@ -1,23 +1,14 @@
 import { useEffect, useState } from "react";
 import { FoodEstablishmentDataProps } from "../components/PlaceCard/PlaceCard";
-import useData from './useData';
+import useFoodEstablishmentData from './useFoodEstablishmentData';
 
 const useFavorites = (): FoodEstablishmentDataProps[] => {
   const [favourites, setFavourites] = useState<FoodEstablishmentDataProps[]>([]);
-  const data = useData();
+  const data = useFoodEstablishmentData();
 
   const updateFavorites = () => {
-    let favouriteIDs: number[] = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      let key = localStorage.key(i);
-      if(key && key.startsWith('item-')) {
-        let item = localStorage.getItem(key);
-        if(item) {
-          favouriteIDs.push(parseInt(item, 10));
-        }
-      }
-    }
-
+    const favouriteIDs = JSON.parse(localStorage.getItem('favouritePlaces') || '[]');
+  
     let newFavourites: FoodEstablishmentDataProps[] = [];
     for (let id of favouriteIDs) {
       let place = data.find(place => place.id === id);
@@ -25,7 +16,7 @@ const useFavorites = (): FoodEstablishmentDataProps[] => {
         newFavourites.push(place);
       }
     }
-
+  
     setFavourites(newFavourites);
   };
 
