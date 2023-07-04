@@ -28,7 +28,7 @@
 
   @include screen-xl() {
     &__image{
-      width: 40%;
+      @include set-size(40% , 40%);
     }
 
     &__title{
@@ -43,7 +43,7 @@
 
   @include screen-lg() {
     &__image{
-      width: 50%;
+      @include set-size(50% , 50%);
     }
 
     &__description{
@@ -52,9 +52,6 @@
   }
 
   @include screen-md() {
-    &__image{
-      width: 50%;
-    }
     &__description{
       width: 70%;
     }
@@ -63,7 +60,7 @@
 
   @include screen-sm() {
     &__image{
-      width: 90%;
+      @include set-size(90% , 90%);
       margin-left: -30px;
     }
 
