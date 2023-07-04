@@ -14,7 +14,7 @@ export const FavoritesPageHeader: React.FC<{}> = ({}) => {
             <div className='header__user'>
                 <div className='header__photo-container'>
                     <img 
-                        src={user?.photo || default_icon} 
+                        src={user?.picture || default_icon} 
                         alt={user?.name || 'Default user icon'}
                         className='header__user-img'
                     />
