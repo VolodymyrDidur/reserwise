@@ -1,5 +1,5 @@
 import {Route, Switch} from 'react-router-dom';
-import { MainPage, PlacePage, HomePage, AccountPage } from '../pages';
+import { MainPage, PlacePage, HomePage, AccountPage, FavoritesPage } from '../pages';
 
 const Routes = () => {
     return (
@@ -8,6 +8,7 @@ const Routes = () => {
             <Route path="/accountPage" render={() => <AccountPage/>}/>
             <Route path="/place/:id" render={() => <PlacePage/>}/>
             <Route path="/home" render={() => <HomePage/>}/>
+            <Route path="/favorites" render={() => <FavoritesPage/>}/>
         </Switch>
     );
 };
