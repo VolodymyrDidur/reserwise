@@ -2,6 +2,7 @@
   @include flex($items:center, $content:space-between);
   padding: 1%;
   font-weight: bold;
+  background-color: $color-theme-grey;
 
   &__user {
       display: flex;

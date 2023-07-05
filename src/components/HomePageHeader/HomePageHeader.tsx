@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePageHeader.scss';
 import useUser from '../../hooks/useUser';
 import { useAuth } from '../../hooks/useAuth';
 import defaultUserImage from '../../assets/images/user-icon.png'
 import { useTranslation } from 'react-i18next';
 
-export const HomePageHeader: React.FC<{}> = ({}) => {
+interface HomePageHeaderProps {
+    onSearch: (query: string) => void;
+}
+
+export const HomePageHeader: React.FC<HomePageHeaderProps> = ({ onSearch }) => {
     const { t } = useTranslation();
     const { isAuthenticated } = useAuth();
     const { user } = useUser();
+    const [ searchQuery, setSearchQuery ] = useState<string>('');
 
-    const greeting = isAuthenticated ? `${t('welcome')}, ${user.given_name} 👋` : `${t('welcomeGuest')} 👋`;
-    const UserImage = isAuthenticated ? user.picture : defaultUserImage ;
+    const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchQuery(event.target.value);
+        onSearch(event.target.value);
+    };
+
+    const greeting = !isAuthenticated ? `${t('welcome')}, ${user.given_name} 👋` : `${t('welcomeGuest')} 👋`;
+    const UserImage = !isAuthenticated ? user.picture : defaultUserImage ;
     
     return (
         <header className="header">
@@ -22,7 +32,13 @@ export const HomePageHeader: React.FC<{}> = ({}) => {
                 <div className="header__username">{greeting}</div>
             </div>
             <div className="search">
-                <input type="text" className="search_input-field" placeholder={t('search')} />
+                <input 
+                    type="text" 
+                    className="search_input-field" 
+                    placeholder={t('search')} 
+                    value={searchQuery}
+                    onChange={handleSearch}
+                />
             </div>
         </header>
         

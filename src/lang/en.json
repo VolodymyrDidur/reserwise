@@ -31,5 +31,6 @@
   "welcome":"Welcome",
   "welcomeGuest": "Welcome, guest",
   "search":"Search restaurant...",
-  "settings":"Settings"
+  "settings":"Settings",
+  "popularplaces": "Popular places"
 }
