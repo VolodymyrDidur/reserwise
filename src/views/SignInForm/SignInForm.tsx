@@ -4,18 +4,20 @@ import useUser from '../../hooks/useUser';
 import jwt_decode from 'jwt-decode';
 import './SignInForm.scss';
 import { useTranslation } from 'react-i18next';
-
+import { useHistory } from 'react-router-dom';
 
 export const SignInForm: React.FC<{}> = ({ }) => {
   const [isFailed, setIsFailed] = React.useState(false);
 
   const { setUser } = useUser();
   const { t } = useTranslation();
+  const history = useHistory();
 
   const handleSuccess = (response) => {
     const userObject = jwt_decode(response.credential);
     setUser(userObject);
     setIsFailed(false);
+    history.goBack();
   }
   const handleError = () => {
     setIsFailed(true);
