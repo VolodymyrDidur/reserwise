@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './PlaceCard.scss'
 import { HeartIcon, LocationIcon, RedHeartIcon } from "../../assets/icons";
 import { emojiMap } from "../../mocks";
-import useUser from '../../hooks/useUser';
+import { useAuth } from '../../hooks/useAuth';
 
 interface IDetailsInstitution {
   categories: string[];
@@ -25,7 +25,7 @@ interface PlaceCardProps {
 }
 
 const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
-  const { user } = useUser();
+  const { isAuthenticated } = useAuth();
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
 
   const updateFavouriteStatus = (id: number) => {
@@ -47,7 +47,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
   const onHeartClick = (e: React.MouseEvent) => {
     e.preventDefault()
     
-    if(user){
+    if(isAuthenticated){
       const favourites = JSON.parse(localStorage.getItem('favouritePlaces') || '[]');
       const index = favourites.indexOf(item.id);
 
