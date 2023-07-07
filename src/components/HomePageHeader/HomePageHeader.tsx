@@ -5,6 +5,7 @@ import { useAuth } from '../../hooks/useAuth';
 import defaultUserImage from '../../assets/images/user-icon.png'
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
+import FavoritesRedirectionButton from '../Buttons/FavoritesRedirectionButton/FavoritesRedirectionButton';
 
 interface HomePageHeaderProps {
     onSearch: (query: string) => void;
@@ -42,14 +43,19 @@ export const HomePageHeader: React.FC<HomePageHeaderProps> = ({ onSearch }) => {
                 </div>
                 <div className="header__username">{greeting}</div>
             </div>
-            <div className="search">
-                <input 
-                    type="text" 
-                    className="search_input-field" 
-                    placeholder={t('search')} 
-                    value={searchQuery}
-                    onChange={handleSearch}
-                />
+            <div className="search-heart-container">
+                <div className="heart-button">
+                    <FavoritesRedirectionButton />
+                </div>
+                <div className="search">
+                    <input 
+                        type="text" 
+                        className="search_input-field" 
+                        placeholder={t('search')} 
+                        value={searchQuery}
+                        onChange={handleSearch}
+                    />
+                </div>
             </div>
         </header>
 

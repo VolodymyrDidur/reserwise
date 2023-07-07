@@ -18,9 +18,17 @@
   }
   }
 
-.search {
+  .search-heart-container {
+    @include flex($content:center, $items:center);
+  }
+  
+  .heart-button {
+    margin: 5px 10px 0px 0px;
+  }
+  
+  .search {
     position: relative;
-
+  
     & input {
       padding-left: 30px;
       background-image: url('../../assets/images/find.png');
@@ -32,5 +40,9 @@
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       outline: none;
-    }   
-  }
+
+      @include screen-sm() {
+        width: 150px;
+      }
+    }
+}
