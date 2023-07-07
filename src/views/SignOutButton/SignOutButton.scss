@@ -1,6 +1,6 @@
 .signout-button {
   @include flex(row, flex-start, center);
-  padding: $input-padding-y $input-padding-x;
+  margin: $input-padding-y $input-padding-x;
   box-sizing: border-box;
   border: none;
   cursor: pointer;

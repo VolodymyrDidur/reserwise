@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import './PlaceCard.scss'
 import { HeartIcon, LocationIcon, RedHeartIcon } from "../../assets/icons";
 import { emojiMap } from "../../mocks";
-import useUser from '../../hooks/useUser';
+import { useAuth } from '../../hooks/useAuth';
 
 interface IDetailsInstitution {
   categories: string[];
@@ -24,7 +25,7 @@ interface PlaceCardProps {
 }
 
 const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
-  const { user } = useUser();
+  const { isAuthenticated } = useAuth();
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
 
   const updateFavouriteStatus = (id: number) => {
@@ -43,8 +44,10 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
     }
   }, [item.id]);
 
-  const onHeartClick = () => {
-    if(user){
+  const onHeartClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    
+    if(isAuthenticated){
       const favourites = JSON.parse(localStorage.getItem('favouritePlaces') || '[]');
       const index = favourites.indexOf(item.id);
 
@@ -61,8 +64,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
   }
 
   return (
-    <div key={item.id}>
-      <div className="place__container">
+    <Link key={item.id} to={`/place/${item.id}`} className="place__container">
         <img className="place__photo" src={item.images[0]} alt={item.name} />
         <button className='background__heart' onClick={onHeartClick}>
           {isFavourite ? <RedHeartIcon /> : <HeartIcon />}
@@ -83,8 +85,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({ item, timeToLocation }) => {
         </div>
         <p className="place__name">{item.name}</p>
         <p className="place__description">{item.description}</p>
-      </div>
-    </div>
+    </Link>
   );
 };
 

@@ -5,7 +5,8 @@
   background-color: $color-theme-grey;
 
   &__user {
-      display: flex;
+    display: flex;
+    cursor: pointer;
   }
   
   &__icon {

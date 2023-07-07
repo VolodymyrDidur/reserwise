@@ -1,10 +1,19 @@
 .signin-page {
-  @include flex(column, center, center);
+  @include flex(column, flex-start, center);
+  @include set-size(100%, 100%);
   margin: auto 0;
+  background-color: $color-theme-grey;
+  padding: 20px 40px;
+  box-sizing: border-box;
+
+  & .header {
+    width: 100%;
+  }
 
   &__image-container {
     width: 80%;
     text-align: center;
+    margin-top: 7vh;
 
     & img {
       width: 30%;
