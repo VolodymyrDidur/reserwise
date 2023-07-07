@@ -20,8 +20,8 @@ export const HomePageHeader: React.FC<HomePageHeaderProps> = ({ onSearch }) => {
         onSearch(event.target.value);
     };
 
-    const greeting = !isAuthenticated ? `${t('welcome')}, ${user.given_name} 👋` : `${t('welcomeGuest')} 👋`;
-    const UserImage = !isAuthenticated ? user.picture : defaultUserImage ;
+    const greeting = isAuthenticated ? `${t('welcome')}, ${user.given_name} 👋` : `${t('welcomeGuest')} 👋`;
+    const UserImage = isAuthenticated ? user.picture : defaultUserImage ;
     
     return (
         <header className="header">
