@@ -17,7 +17,7 @@ import inclusivityIcon from '../../assets/images/inclusivity.svg';
 import openIcon from '../../assets/images/open.svg';
 import withChildrenIcon from '../../assets/images/withChildren.svg';
 
-interface Category {
+export interface Category {
     id: string;
     name: string;
     image: string;

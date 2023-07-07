@@ -43,7 +43,7 @@ export const foodEstablishmentData: FoodEstablishmentDataProps[] = [
         description: "Famous pizza chain serving a variety of delicious pizzas and sides.",
         images: ["https://picsum.photos/id/292/800/500", "https://picsum.photos/id/431/800/500", "https://picsum.photos/id/635/800/500"],
         details: {
-            categories: ["Fast Food"],
+            categories: ["Fastfood", "Pizza"],
             countryCuisines: ["Italian", "American"],
             features: ["Delivery", "Online Ordering"]
         },
@@ -85,7 +85,7 @@ export const foodEstablishmentData: FoodEstablishmentDataProps[] = [
         description: "Vibrant Mexican restaurant serving delicious tacos and authentic Mexican cuisine.",
         images: ["https://picsum.photos/id/292/800/500", "https://picsum.photos/id/431/800/500", "https://picsum.photos/id/635/800/500"],
         details: {
-            categories: ["Fast Food"],
+            categories: ["Fastfood"],
             countryCuisines: ["Mexican"],
             features: ["Outdoor Seating", "Happy Hour"]
         },
