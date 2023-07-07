@@ -1,5 +1,5 @@
 import {Route, Switch, Redirect} from 'react-router-dom';
-import { PlacePage, HomePage, AccountPage } from '../pages';
+import { PlacePage, HomePage, AccountPage, FavoritesPage  } from '../pages';
 import { SignInPage } from '../pages/SignInPage/SignInPage';
 
 const Routes = () => {
@@ -10,6 +10,7 @@ const Routes = () => {
             <Route path="/place/:id" render={() => <PlacePage/>}/>
             <Route path="/home" render={() => <HomePage/>}/>
             <Route path="/sign-in" render={()=><SignInPage/>} />
+            <Route path="/favorites" render={() => <FavoritesPage/>}/>
         </Switch>
     );
 };

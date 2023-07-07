@@ -1,0 +1,5 @@
+.favorites__page {
+    @include set-size(100%, 100%);
+    background-color: $color-theme-grey;
+    box-sizing: border-box;
+}
