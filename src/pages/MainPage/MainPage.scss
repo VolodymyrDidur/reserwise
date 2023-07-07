@@ -1,7 +1,0 @@
-.main-page {
-  @include set-size(100%, 100%);
-  @include flex($direction: column, $items: center);
-  background-color: $color-theme-grey;
-  padding: 20px 40px;
-  box-sizing: border-box;
-}

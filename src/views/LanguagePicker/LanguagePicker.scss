@@ -1,6 +1,5 @@
-.signout-button {
+.language-picker {
   @include flex(row, flex-start, center);
-  margin: $input-padding-y $input-padding-x;
   box-sizing: border-box;
   border: none;
   cursor: pointer;
@@ -13,7 +12,6 @@
     display: inline-block;
     background-color: $color-dark-peach;
     border-radius: 10px;
-    margin-right: $input-padding-x ;
 
     &>svg {
       fill: $white;
@@ -22,7 +20,21 @@
       @include set-size($width: 40px, $height: 36px);
     }
   }
-  &__text{
-    @include font($font-size:16px,$line-height:1.2,  $font-weight:500);
+
+  &__select {
+    @include font($font-size: 16px, $line-height: 1.2, $font-weight: 500);
+    padding: 10px 16px;
+    outline: none;
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+
+    & option:checked {
+      background-color: $color-dark-peach;
+      color: $white;
+    }
   }
 }
