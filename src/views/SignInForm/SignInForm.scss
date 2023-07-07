@@ -8,6 +8,7 @@
     font-family: 'SoinSansNeue Normal', sans-serif;
     @include font($font-size: 2rem, $line-height: $line-height-sm, $color: $text-color);
     text-align: center;
+    margin: 24px 0px;
   }
 
   &>div {
