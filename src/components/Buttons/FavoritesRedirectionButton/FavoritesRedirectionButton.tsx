@@ -9,11 +9,11 @@ const FavoritesRedirectionButton: React.FC = () => {
   const history = useHistory();
 
   const handleButtonClick = () => {
-    history.push('/favorites');
-  }
-
-  if (!isAuthenticated) {
-    return null;
+    if (isAuthenticated) {
+      history.push('/favorites');
+    } else {
+      history.push('/sign-in');
+    }
   }
 
   return (
