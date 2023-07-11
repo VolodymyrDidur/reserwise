@@ -5,9 +5,12 @@ import { DarkButton } from "../Buttons/DarkButton";
 import { LightButton } from "../Buttons/LightButton";
 import { foodEstablishmentData } from "../../mocks";
 import './PlaceInfo.scss';
+import { useTranslation } from 'react-i18next';
 
 const PlaceInfo = () => {
     const {id} = useParams<{ id: string }>();
+    const {t} = useTranslation();
+
     const place = foodEstablishmentData.find(item => item.id === parseInt(id));
     return (
         <div className='place__info'>
@@ -17,8 +20,8 @@ const PlaceInfo = () => {
                            features={place.details.features}
                            countryCuisines={place.details.countryCuisines}/>
             <div className='place__info_btns'>
-                <LightButton text='Menu' link='#ComingSoon'/>
-                <DarkButton text='Call' link={`tel:${place.phoneNumber}`}/>
+                <LightButton text={t('menu')} link='#ComingSoon'/>
+                <DarkButton text={t('call')} link={`tel:${place.phoneNumber}`}/>
             </div>
         </div>
     );

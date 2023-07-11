@@ -8,6 +8,7 @@ import { LocationIcon } from "../../../assets/icons.tsx";
 import { renderToString } from "react-dom/server";
 import 'leaflet/dist/leaflet.css';
 import './PlaceAddress.scss';
+import { useTranslation } from "react-i18next";
 
 interface PlaceAddressProps {
     address: string
@@ -15,6 +16,7 @@ interface PlaceAddressProps {
 
 export const PlaceAddress: React.FC<PlaceAddressProps> = ({address}) => {
     const {location, isLoading} = useSearchLocation(address);
+    const {t} = useTranslation();
 
     const iconHtml = renderToString(<LocationIcon/>);
     const customIcon = new DivIcon({
@@ -25,7 +27,7 @@ export const PlaceAddress: React.FC<PlaceAddressProps> = ({address}) => {
 
     return (
         <>
-            <PlaceSubtitle subTitle="Address" btnText="Copy" address={address}/>
+            <PlaceSubtitle subTitle={t("address")} btnText={t("copy")} address={address}/>
             <div className='map__wrapper'>
                 {isLoading ? (
                     <Spinner/>
