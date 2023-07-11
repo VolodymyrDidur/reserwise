@@ -105,7 +105,7 @@ export const foodEstablishmentData: FoodEstablishmentDataProps[] = [
 export const emojiMap: Record<string, string> = {
     "Cafe": "☕️",
     "Bakery": "🥐",
-    "Fast Food": "🍔",
+    "Fastfood": "🍔",
     "Pizza": "🍕",
     "Sushi": "🍣",
     "Japanese": "🇯🇵",
