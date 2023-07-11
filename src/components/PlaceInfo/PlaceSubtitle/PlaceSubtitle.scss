@@ -23,6 +23,7 @@
 .btn__popup {
   @include font($font-size: 0.9rem, $line-height: $line-height-sm, $color: $dark-grey);
   @include flex($content: space-between, $items: center);
+  cursor: pointer;
 
   span {
     @include flex($items: center);

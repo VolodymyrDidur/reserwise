@@ -36,11 +36,11 @@ export const PlaceSubtitle: React.FC<PlaceSubtitleProps> = ({
                 <p className='place__subtitle_text'>{subTitle}</p>
             </div>
             {address ? (
-                <a href="#" className="btn__popup" onClick={handleCopyClick}>{btnText}<span><ArrowRightIcon
+                <a className="btn__popup" onClick={handleCopyClick}>{btnText}<span><ArrowRightIcon
                     fill="#e27976" width={10}/></span></a>
 
             ) : (
-                <a href="#" className="btn__popup" onClick={handlePopupToggle}>{btnText}<span><ArrowRightIcon
+                <a className="btn__popup" onClick={handlePopupToggle}>{btnText}<span><ArrowRightIcon
                     fill="#e27976" width={10}/></span></a>
             )}
 
